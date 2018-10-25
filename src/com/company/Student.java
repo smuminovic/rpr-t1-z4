@@ -33,5 +33,10 @@ public class Student {
     public void setIndeks(int index) {
         this.brojIndeksa = index;
     }
+    @Override
+    public String toString() {
+        return prezimeStudenta+" "+imeStudenta+" "+"("+brojIndeksa+")";
+    }
+
 }
 
