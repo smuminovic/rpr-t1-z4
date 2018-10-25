@@ -62,4 +62,12 @@ public class Predmet {
         this.studenti = studenti;
     }
 
+    //ispisvanje studenta sa predmeta
+    public void ispisi(Student student) {
+        for (int i = 0; i < getStudenti().length; i++) {
+            if (getStudenti()[i].getIme() == student.getIme()) getStudenti()[i] = null;
+        }
+    }
+
+
 }
