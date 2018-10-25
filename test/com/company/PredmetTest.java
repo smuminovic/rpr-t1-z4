@@ -49,7 +49,7 @@ class PredmetTest {
     @Test
     void setSifraPredmeta() {
         Predmet p = new Predmet("RPR", 17582, 12);
-        p.setSifraPredmeta(17613);
+        p.setSifraPredmeta(17582);
         assertEquals("RPR 17582", p.toString());
     }
 

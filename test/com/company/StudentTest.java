@@ -31,7 +31,7 @@ class StudentTest {
     @Test
     void setIme() {
         Student s=new Student("Aaaa", "Bbbb", 17582);
-        s.setIme("Lejla");
+        s.setIme("Aaaa");
         assertEquals("Aaaa", s.getIme());
         s.setIme(null);
         assertEquals(null, s.getIme());
