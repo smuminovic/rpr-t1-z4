@@ -15,6 +15,7 @@ public class Program {
         System.out.println("Unesite ime predmeta i sifru: ");
         String imePredmeta = ulaz.nextLine();
         int sifraPredmeta = ulaz.nextInt();
+        ulaz.nextLine();
         Predmet noviPredmet = new Predmet (imePredmeta, sifraPredmeta, 25);
         Predmet[] noviNiz = new Predmet[getPredmeti().length +1];
         for (int i = 0; i < getPredmeti().length; i++) {
@@ -23,7 +24,6 @@ public class Program {
         noviNiz[getPredmeti().length] = noviPredmet;
         setPredmeti(noviNiz);
     }
-
     public static void DodajPredmet(Predmet p){
         boolean ima = false;
         for (int i = 0; i < predmeti.length; i++) if (predmeti[i].getSifraPredmeta() == p.getSifraPredmeta()) ima = true;
@@ -60,6 +60,7 @@ public class Program {
         String ime = ulaz.nextLine();
         String prezime = ulaz.nextLine();
         int indeks = ulaz.nextInt();
+        ulaz.nextLine();
         boolean ima = false;
         for (int i = 0; i < studenti.length; i++) if (studenti[i].getIndeks() == indeks) ima = true;
         if (!ima) {
@@ -91,22 +92,11 @@ public class Program {
             }
         }
         public static void ListaPredmeta(){
-            setPredmeti(new Predmet[0]);
+            //setPredmeti(new Predmet[0]);
             for (int i = 0; i< getPredmeti().length; i++){
                 System.out.println((i+1)+". "+ getPredmeti()[i].getNazivPredmeta()+" "+ getPredmeti()[i].getSifraPredmeta());
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
     public  static void removeElementStudent() {
         System.out.println("Unesite ime, prezime i indeks studenta kojeg zelite izbrisati: ");
@@ -142,7 +132,7 @@ public class Program {
             System.arraycopy(getPredmeti(), 0, n, 0, rednibroj);
             System.arraycopy(getPredmeti(), (rednibroj + 1), n, rednibroj, getPredmeti().length - rednibroj - 1);
             setPredmeti(n);
-        } else System.out.println("Ovaj element se ne nalazi u nizu studenata!");
+        } else System.out.println("Ovaj element se ne nalazi u nizu predmeta!");
     }
     public  static void UnosStudenata(PrintStream izlaz, Scanner ulaz){
         izlaz.println("Unesite zeljeni broj studenata: ");
@@ -156,7 +146,6 @@ public class Program {
             int in = ulaz.nextInt();
             ulaz.nextLine();
             getStudenti()[i]=new Student(im,prez,in);
-
         }
     }
     public static void UnosPredmeta() {
@@ -206,14 +195,6 @@ public class Program {
             }
         }
     }
-
-
-
-
-
-
-
-
 
     //getteri
     public static Student[] getStudenti() {
