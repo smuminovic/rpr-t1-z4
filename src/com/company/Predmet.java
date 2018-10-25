@@ -16,6 +16,11 @@ public class Predmet {
         studenti = new Student[0];
     }
 
+    public Predmet(String naziv, Student podaci){
+        this.setNazivPredmeta(naziv);
+        DodajNovogStudenta(podaci);
+    }
+
     //dodavanje novog studenta na predmet, poziv je u metodi upisi
     public void DodajNovogStudenta(Student s) {
         Student[] noviStudenti = new Student[getStudenti().length+1];
