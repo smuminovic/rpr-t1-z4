@@ -69,5 +69,9 @@ public class Predmet {
         }
     }
 
+    @Override
+    public String toString() {
+        return getNazivPredmeta()+" "+sifraPredmeta;
+    }
 
 }
