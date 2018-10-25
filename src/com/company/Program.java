@@ -24,6 +24,56 @@ public class Program {
         setPredmeti(noviNiz);
     }
 
+    public static void DodajPredmet(Predmet p){
+        boolean ima = false;
+        for (int i = 0; i < predmeti.length; i++) if (predmeti[i].getSifraPredmeta() == p.getSifraPredmeta()) ima = true;
+        if(!ima) {
+            Predmet[] NoviNiz = new Predmet[predmeti.length + 1];
+            for (int i = 0; i < predmeti.length; i++) {
+                NoviNiz[i] = predmeti[i];
+            }
+            NoviNiz[predmeti.length] = p;
+            predmeti = NoviNiz;
+            System.out.println("OK");
+        }else System.out.println("Student vec postoji!");
+
+    }
+
+    //dodavanje studenta
+
+    public  static void DodajStudenta(Student s) {
+
+        boolean ima = false;
+        for (int i = 0; i < studenti.length; i++) if (studenti[i].getIndeks() == s.getIndeks()) ima = true;
+        if (!ima) {
+            Student[] NoviNiz = new Student[studenti.length + 1];
+            for (int i = 0; i < studenti.length; i++) {
+                NoviNiz[i] = studenti[i];
+            }
+            NoviNiz[studenti.length] = s;
+            studenti = NoviNiz;
+            System.out.println("OK");
+        } else System.out.println("Student vec postoji");
+    }
+    public  static void DodajStudenta() {
+        System.out.println("Unesite ime, prezime i indeks studenta: ");
+        String ime = ulaz.nextLine();
+        String prezime = ulaz.nextLine();
+        int indeks = ulaz.nextInt();
+        boolean ima = false;
+        for (int i = 0; i < studenti.length; i++) if (studenti[i].getIndeks() == indeks) ima = true;
+        if (!ima) {
+            Student Novi = new Student(ime, prezime, indeks);
+            Student[] NoviNiz = new Student[studenti.length + 1];
+            for (int i = 0; i < studenti.length; i++) {
+                NoviNiz[i] = studenti[i];
+            }
+            NoviNiz[studenti.length] = Novi;
+            studenti = NoviNiz;
+            System.out.println("OK");
+        } else System.out.println("Student vec postoji");
+    }
+
     //getteri
     public static Predmet[] getPredmeti() {
         return predmeti;
